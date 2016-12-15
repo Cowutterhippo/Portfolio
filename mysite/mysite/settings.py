@@ -79,7 +79,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME':'Biologicallydb',
         'USER':'bluepangolin',
-        'PASSWORD':'Cheetah1',
         'HOST':'biologicallydb.ctapkakfi5ru.us-west-2.rds.amazonaws.com:5432',
         'PORT':'5432',
     }
