@@ -1,0 +1,73 @@
+
+<!-- https://github.com/Toshik/bootstrap-ajax -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>{% block title %} {% endblock %} Notes</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<link media="all" type="text/css" rel="stylesheet" href="{% static "css/styles.css" %}">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+	
+	<script src="{% static "js/mustache.min.js" %}"></script>
+	<script src="{% static "js/jquery-ui.min.js" %}" defer></script>
+	
+	<script src="{% static "js/django_ajax.js" %}" defer></script>
+	<script src="{% static "js/spa.js" %}" defer></script>
+	<script src="{% static "js/mustache.min.js" %}" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+	<script src="{% static "js/marked.js" %}" ></script>
+
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1 class="text-center">notes</h1>
+		</header>
+	{# % if user.is_authenticated % #}
+		<nav class="nav navbar-defautl">
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="/users/profile" class="btn ajax">
+						<span class="glyphicon glyphicon-user"></span> bv
+							Profile
+					</a>
+				</li>
+				<li>
+					<a href="/users/logout" class="btn ajax">
+						<span class="glyphicon glyphicon-off"></span>
+						Logout
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+	{# % end if % #}
+
+	<main>
+	{% block content %}
+	{% endblock %}
+	</main>
+
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-heading panel-title">
+				<span class="glyphicon glyphicon-tree-conifer"></span>
+				Panel
+			</div>
+			<div clas="panel-body">
+				Work in progress
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends base_template %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+	{% load bootstrap %}
+
+<div class="panel panel-default">
+	<div class="panel-heading panel-title">
+		<span class="glyphicon glyphicon-user"></span>
+		Login {{ message }}
+	</div>
+
+	<div class="panel-body">
+		<form action"/user/login" method="POST">
+			{% csrf_token %}
+			<input type="hidden" name="next" value="{{ next_url }}" />
+			{% boot_form_fields form %}
+
+			<button type="submit" class="btn btn-default">
+				<span class="glyphicon glyphicon-share-alt"></span>
+			</button>
+
+		</form>
+
+	</div>
+	
+	<div class="panel-footer">
+			<!--non breaking space  -->
+			<a class="pull-right ajax" href="/users/signup{{ next_string }}">
+				<span class="glyphicon glyphicon-user"></span>
+				Don't have an account? Sign up!
+			</a>
+	</div>
+</div>
+{% endblock %}

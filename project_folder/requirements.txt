@@ -1,0 +1,8 @@
+Django
+Markdown
+dj-database-url
+dj-static
+django-toolbelt
+mistune
+psycopg2
+static3
